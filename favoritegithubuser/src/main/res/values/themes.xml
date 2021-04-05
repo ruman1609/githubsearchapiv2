@@ -1,0 +1,67 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.GitHubUserV2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white25</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/black25</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!-- Animation Transition -->
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+
+    <style name="Toolbar" parent="Theme.GitHubUserV2">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
+        <item name="android:textColorSecondary">?attr/colorOnPrimary</item>
+        <item name="android:itemTextAppearance">@style/MenuItem</item>
+    </style>
+
+    <style name="MenuItem">
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+    </style>
+
+
+    <style name="InitObj">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Text" parent="InitObj">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.H1">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.H2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Caption">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CustomFAB">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:layout_margin">@dimen/normal</item>
+        <item name="android:layout_gravity">bottom|end</item>
+    </style>
+
+    <style name="ThemeOverlay.GitHubUserV2.AppWidgetContainer" parent="">
+        <item name="appWidgetBackgroundColor">@color/light_blue_600</item>
+        <item name="appWidgetTextColor">@color/light_blue_50</item>
+    </style>
+</resources>

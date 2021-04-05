@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activities.FavoriteActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/normal">
+
+        <TextView
+            android:id="@+id/status"
+            style="@style/Text.H1"
+            android:text="@string/empty_fav"
+            android:textAlignment="center"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/loadingFav"
+            style="@style/InitObj" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/per_view" />
+    </LinearLayout>
+
+</LinearLayout>

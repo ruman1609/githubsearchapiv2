@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pengguna GitHub V2</string>
+    <string name="profile_picture">Foto Profil</string>
+    <string name="app_icon">Ikon App</string>
+    <string name="github_search">Cari Pengguna GitHub</string>
+    <string name="search_hint">Cari Pengguna</string>
+    <string name="information">Ketik username GitHub di kotak pencarian</string>
+    <string name="not_found">Pengguna tidak ditemukan</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="Kval">%srb</string>
+    <string name="Mval">%sjt</string>
+    <string name="Bval">%sm</string>
+    <string name="go_to_user_profile_at_github">Ke profil pengguna di GitHub</string>
+    <string name="no_list">Tidak ada %s</string>
+    <string name="favorite">Favorit</string>
+    <string name="share">Sebar</string>
+    <string name="unfavorite">Unfavorit</string>
+    <string name="share_value">Pengguna GitHub\nID: %1$d\nUsername: %2$s\nAku tantang kamu untuk cari pengguna ini</string>
+    <string name="share_send">Kirim ke?</string>
+    <string name="delete_succeed">%s berhasil dihapus dari daftar Favorit</string>
+    <string name="insert_succeed">%s berhasil ditambah ke daftar Favorit</string>
+    <string name="more_options">Opsi Lebih</string>
+    <string name="close_menu">Tutup Menu</string>
+    <string name="expand">Perluas</string>
+    <string name="favorite_list">Pengguna Favorit</string>
+    <string name="empty_fav">Tidak ada pengguna favorite</string>
+    <string name="notif_title">Pengingat</string>
+    <string name="notif_msg">Hai, ayo cari pengguna GitHub lainnya</string>
+    <string name="settings">Pengaturan</string>
+    <string name="reminder">Pengigat</string>
+    <string name="reminder_summary">Kamu akan diingatkan setiap jam 9 pagi</string>
+    <string name="reminder_on">Reminder dinyalakan</string>
+    <string name="reminder_off">Reminder dimatikan</string>
+    <string name="tap_to_refresh">Sentuh untuk memperbarui</string>
+</resources>

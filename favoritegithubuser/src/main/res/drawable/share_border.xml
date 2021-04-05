@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!-- For Border Only -->
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white25" />
+            <corners
+                android:bottomLeftRadius="@dimen/normal"
+                android:topLeftRadius="@dimen/normal" />
+            <!-- For Border Color -->
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/small"
+        android:left="@dimen/small"
+        android:top="@dimen/small">
+        <!-- In @<item> for border which will visible -->
+        <shape android:shape="rectangle">
+            <solid android:color="@color/black" />
+            <corners
+                android:bottomLeftRadius="@dimen/normal"
+                android:topLeftRadius="@dimen/normal" />
+            <!-- For Fill Only -->
+        </shape>
+    </item>
+
+</layer-list>

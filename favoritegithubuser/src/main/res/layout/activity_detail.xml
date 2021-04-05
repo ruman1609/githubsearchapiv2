@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activities.DetailActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                style="@style/InitObj"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        style="@style/InitObj"
+                        android:baselineAligned="false"
+                        android:padding="@dimen/normal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="@dimen/normal"
+                            android:transitionName="pictureTransition"
+                            tools:src="@tools:sample/avatars" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                style="@style/InitObj"
+                                android:weightSum="3">
+
+                                <ProgressBar
+                                    android:id="@+id/loadingCount"
+                                    style="@style/InitObj"
+                                    android:visibility="visible"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/repos"
+                                    style="@style/Text.H2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="32dp"
+                                    android:layout_marginTop="16dp"
+                                    android:textAlignment="center"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="5000" />
+
+                                <TextView
+                                    style="@style/Text.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/repos"
+                                    android:textAlignment="center"
+                                    app:layout_constraintEnd_toEndOf="@+id/repos"
+                                    app:layout_constraintStart_toStartOf="@+id/repos"
+                                    app:layout_constraintTop_toBottomOf="@+id/repos" />
+
+                                <TextView
+                                    android:id="@+id/followers"
+                                    style="@style/Text.H2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:textAlignment="center"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="5000" />
+
+                                <TextView
+                                    style="@style/Text.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/followers"
+                                    android:textAlignment="center"
+                                    app:layout_constraintEnd_toEndOf="@+id/followers"
+                                    app:layout_constraintStart_toStartOf="@+id/followers"
+                                    app:layout_constraintTop_toBottomOf="@+id/followers" />
+
+                                <TextView
+                                    android:id="@+id/following"
+                                    style="@style/Text.H2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="32dp"
+                                    android:textAlignment="center"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="5000" />
+
+                                <TextView
+                                    style="@style/Text.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/following"
+                                    android:textAlignment="center"
+                                    app:layout_constraintEnd_toEndOf="@+id/following"
+                                    app:layout_constraintHorizontal_bias="0.428"
+                                    app:layout_constraintStart_toStartOf="@+id/following"
+                                    app:layout_constraintTop_toBottomOf="@+id/following" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/InitObj"
+                        android:layout_marginStart="@dimen/normal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/username"
+                            style="@style/Text.H1"
+                            android:transitionName="usernameTransition"
+                            tools:text="USERNAME" />
+
+                        <ProgressBar
+                            android:id="@+id/loadingDetail"
+                            style="@style/InitObj" />
+
+                        <TextView
+                            android:id="@+id/url"
+                            style="@style/Text"
+                            android:text="@string/go_to_user_profile_at_github"
+                            android:textColor="@color/sea_blue" />
+
+                        <TextView
+                            android:id="@+id/name"
+                            style="@style/Text"
+                            tools:text="NAMA" />
+
+                        <TextView
+                            android:id="@+id/location"
+                            style="@style/Text.Caption"
+                            tools:text="LOCATION" />
+
+                        <TextView
+                            android:id="@+id/company"
+                            style="@style/Text.Caption"
+                            tools:text="COMPANY" />
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/loadingFoll"
+                        style="@style/InitObj" />
+
+                </LinearLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                style="@style/InitObj"
+                android:layout_marginTop="@dimen/normal"
+                android:text="@string/app_name"
+                app:tabBackground="@drawable/tab_background"
+                app:tabGravity="fill"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/share"
+            style="@style/CustomFAB"
+            android:background="@color/sea_blue"
+            android:contentDescription="@string/share"
+            android:src="@drawable/ic_share"
+            android:visibility="gone"
+            app:fabCustomSize="40dp"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/favorite"
+            style="@style/CustomFAB"
+            android:background="@color/red"
+            android:contentDescription="@string/favorite"
+            android:src="@drawable/ic_favorite"
+            android:visibility="gone"
+            app:fabCustomSize="40dp"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/expand"
+            style="@style/CustomFAB"
+            android:background="@color/black"
+            android:contentDescription="@string/expand"
+            android:src="@drawable/ic_add"
+            android:visibility="gone"
+            app:fabCustomSize="56dp"
+            app:fabSize="auto" />
+
+        <ProgressBar
+            android:id="@+id/buttonLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/normal" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

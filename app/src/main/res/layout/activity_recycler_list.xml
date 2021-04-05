@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activities.RecyclerListActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/SearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/normal"
+        android:paddingEnd="@dimen/normal"
+        android:theme="@style/SearchBar"
+        app:endIconDrawable="@drawable/ic_close"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/black"
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/userSearch"
+            style="@style/InitObj"
+            android:autofillHints="ruman1609"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        style="@style/InitObj"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/information"
+        style="@style/Text.H1"
+        android:text="@string/information"
+        android:textAlignment="center"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/normal"
+        tools:listitem="@layout/per_view" />
+
+</LinearLayout>

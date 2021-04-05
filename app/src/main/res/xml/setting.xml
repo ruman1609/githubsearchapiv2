@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:icon="@drawable/ic_alarm"
+        android:key="@string/key_setting"
+        android:summary="@string/reminder_summary"
+        android:title="@string/reminder" />
+
+</PreferenceScreen>
