@@ -7,6 +7,11 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
 
+/**
+ * Don't forget to place your GitHub API Key at gradle.properties.example file
+ * and rename the file from gradle.properties.example to gradle.properties
+ */
+
 interface APIRequest {
     @GET("users/{user}")
     @Headers("Authorization: token ${BuildConfig.API_KEY}")
