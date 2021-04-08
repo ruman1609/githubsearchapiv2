@@ -9,6 +9,11 @@ import retrofit2.http.Headers
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+/**
+ * Don't forget to place your GitHub API Key at gradle.properties.example file
+ * and rename the file from gradle.properties.example to gradle.properties
+ */
+
 interface APIRequest {
 
     @GET("search/users")
