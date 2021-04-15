@@ -14,8 +14,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rudyrachman16.favoritegithubuser.R
@@ -39,8 +39,8 @@ class FavoriteActivity : AppCompatActivity(), CoroutineScope {
     private var listAdapters: ListAdapter? = null
     private val listAdapter get() = listAdapters!!
 
-    private var viewModels: FavoriteViewModel? = null
-    private val viewModel get() = viewModels!!
+    //    private var viewModels: FavoriteViewModel? = null
+    private val viewModel: FavoriteViewModel by viewModels()
 
     companion object {
         suspend fun favoriteShort(
@@ -130,8 +130,8 @@ class FavoriteActivity : AppCompatActivity(), CoroutineScope {
         setSupportActionBar(bind.toolbar.root)
         title = getString(R.string.favorite_list)
 
-        viewModels = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())
-            .get(FavoriteViewModel::class.java)
+//        viewModels = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())
+//            .get(FavoriteViewModel::class.java)
         viewModel.setList(applicationContext)
 
         listAdapters = ListAdapter(applicationContext, { user, fav, position ->
@@ -215,7 +215,7 @@ class FavoriteActivity : AppCompatActivity(), CoroutineScope {
     override fun onDestroy() {
         super.onDestroy()
         binding = null
-        viewModels = null
+//        viewModels = null
     }
 
     override val coroutineContext: CoroutineContext

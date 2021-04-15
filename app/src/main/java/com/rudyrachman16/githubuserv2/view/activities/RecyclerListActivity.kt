@@ -12,9 +12,9 @@ import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rudyrachman16.githubuserv2.R
@@ -37,8 +37,8 @@ class RecyclerListActivity : AppCompatActivity(), CoroutineScope {
     private val listAdapter get() = listAdaptered!!
     private val list = ArrayList<SearchUser>()
 
-    private var listViewModeler: ListViewModel? = null
-    private val listViewModel get() = listViewModeler!!
+    //    private var listViewModeler: ListViewModel? = null
+    private val listViewModel: ListViewModel by viewModels()
 
     companion object {
         @JvmStatic
@@ -73,10 +73,10 @@ class RecyclerListActivity : AppCompatActivity(), CoroutineScope {
             } else false
         }
 
-        listViewModeler = ViewModelProvider(
-            this,
-            ViewModelProvider.NewInstanceFactory()
-        ).get(ListViewModel::class.java)
+//        listViewModeler = ViewModelProvider(
+//            this,
+//            ViewModelProvider.NewInstanceFactory()
+//        ).get(ListViewModel::class.java)
         listAdaptered = ListAdapter(this@RecyclerListActivity, { user, fav, position ->
             launch(coroutineContext) {
                 val short = async {
@@ -141,7 +141,7 @@ class RecyclerListActivity : AppCompatActivity(), CoroutineScope {
         super.onDestroy()
         binding = null
         listAdaptered = null
-        listViewModeler = null
+//        listViewModeler = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

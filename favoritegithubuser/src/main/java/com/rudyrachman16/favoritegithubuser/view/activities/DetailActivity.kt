@@ -11,10 +11,10 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -83,10 +83,12 @@ class DetailActivity : AppCompatActivity(), CoroutineScope {
             applyPattern("#,###.#")
         }
 
-        val detailViewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.NewInstanceFactory()
-        ).get(DetailViewModel::class.java)
+        val detailViewModel: DetailViewModel by viewModels()
+
+//        val detailViewModel = ViewModelProvider(
+//            this,
+//            ViewModelProvider.NewInstanceFactory()
+//        ).get(DetailViewModel::class.java)
 
         detailViewModel.setDetail(user, applicationContext)
         detailViewModel.setFollowing(user, applicationContext)

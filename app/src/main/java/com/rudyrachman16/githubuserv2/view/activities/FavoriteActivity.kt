@@ -14,8 +14,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rudyrachman16.githubuserv2.R
@@ -125,8 +125,11 @@ class FavoriteActivity : AppCompatActivity(), CoroutineScope {
         }
         title = getString(R.string.favorite_list)
 
-        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())
-            .get(FavoriteViewModel::class.java)
+        val viewModel: FavoriteViewModel by viewModels()
+
+//        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())
+//            .get(FavoriteViewModel::class.java)
+
         viewModel.setList(applicationContext)
 
         listAdapters = ListAdapter(applicationContext, { user, fav, position ->
